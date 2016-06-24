@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="15E65" minimumToolsVersion="Automatic">
+    <entity name="PersonalLog" representedClassName="PersonLog" syncable="YES">
+        <attribute name="logContent" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="logTime" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="logTitle" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="restTime" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="PersonalLog" positionX="-27" positionY="18" width="128" height="105"/>
+    </elements>
+</model>
