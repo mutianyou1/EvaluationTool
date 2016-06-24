@@ -28,7 +28,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.pushViewController(LoginViewController(), animated: false)
+        self.navigationController?.presentViewController(LoginViewController(), animated: false, completion: nil)
         self.logContentTF.delegate = self
         self.restTimeTF.delegate = self
         logContentTF.borderStyle = .RoundedRect
