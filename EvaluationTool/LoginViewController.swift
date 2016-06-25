@@ -31,6 +31,7 @@ class LoginViewController: UIViewController {
         password.textAlignment = .Center
         loginTF.borderStyle = .RoundedRect
         loginTF.delegate = self
+        loginTF.placeholder = "请输入密码"
         loginTF.secureTextEntry = true
         self.view.addSubview(logoTitle)
         self.view.addSubview(password)
