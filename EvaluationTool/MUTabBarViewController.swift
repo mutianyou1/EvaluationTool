@@ -31,6 +31,9 @@ class MUTabBarViewController: UITabBarController {
         self.selectedIndex = 1
     }
     private func clickChooseTabbar(index : NSInteger) {
+        if self.selectedIndex + 1 == index {
+            return
+        }
       self.selectedIndex = index - 1
     }
     override func didReceiveMemoryWarning() {
