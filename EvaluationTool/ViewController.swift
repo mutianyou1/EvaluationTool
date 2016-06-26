@@ -16,7 +16,21 @@ class ViewController: UIViewController {
     private let app = UIApplication.sharedApplication().delegate as! AppDelegate
     lazy var logContentTF = UITextField(frame: CGRectMake(20, 80, kwidth - 40, 40))
     lazy var restTimeTF = UITextField(frame: CGRectMake(20, 200, kwidth - 40, 40))
-    
+//    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
+//        super.init(nibName: "ViewController", bundle: NSBundle.mainBundle())
+//        self.tabBarItem.selectedImage = UIImage(named: "person2")
+//        self.tabBarItem.image = UIImage(named: "person1")
+//        self.tabBarItem.title = "个人日志"
+//    }
+    init(sting :String){
+                super.init(nibName: nil, bundle: nil)
+                self.tabBarItem.selectedImage = UIImage(named: "person2")
+                self.tabBarItem.image = UIImage(named: "person1")
+                self.tabBarItem.title = "个人日志"
+    }
+    required init?(coder aDecoder: NSCoder) {
+       fatalError("not init")
+    }
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         self.view.backgroundColor = UIColor.whiteColor()
@@ -29,6 +43,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.presentViewController(LoginViewController(), animated: false, completion: nil)
+        self.view.backgroundColor = UIColor.whiteColor()
         self.logContentTF.delegate = self
         self.restTimeTF.delegate = self
         logContentTF.borderStyle = .RoundedRect

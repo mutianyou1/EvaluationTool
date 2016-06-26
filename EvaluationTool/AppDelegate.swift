@@ -13,12 +13,17 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
-
+    let tabar = MUTabBarViewController()
+   
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-        let navi = UINavigationController.init(rootViewController: ViewController())
-        self.window?.rootViewController = navi
+        self.window = UIWindow.init(frame: UIScreen.mainScreen().bounds)
+        self.window?.backgroundColor = UIColor.whiteColor()
+        self.window?.makeKeyAndVisible()
+        let navi = UINavigationController.init(rootViewController: ViewController.init(sting: "ss"))
+        let navi2 = UINavigationController.init(rootViewController: ManagementViewController())
+        tabar.setViewControllers([navi2,navi], animated: true)
+        self.window?.rootViewController = tabar
         return true
     }
 

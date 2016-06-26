@@ -22,6 +22,7 @@
 		DDA726881D1E6D1C00913FDE /* MUTabBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA726871D1E6D1C00913FDE /* MUTabBarButton.swift */; };
 		DDA7268A1D1E6D3400913FDE /* MUTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA726891D1E6D3400913FDE /* MUTabBarView.swift */; };
 		DDA7268C1D1E6DF200913FDE /* MUTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDA7268B1D1E6DF200913FDE /* MUTabBarViewController.swift */; };
+		DDB3D6A91D1F864100D01E76 /* ManagementViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDB3D6A81D1F864100D01E76 /* ManagementViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		DDA726871D1E6D1C00913FDE /* MUTabBarButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MUTabBarButton.swift; sourceTree = "<group>"; };
 		DDA726891D1E6D3400913FDE /* MUTabBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MUTabBarView.swift; sourceTree = "<group>"; };
 		DDA7268B1D1E6DF200913FDE /* MUTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MUTabBarViewController.swift; sourceTree = "<group>"; };
+		DDB3D6A81D1F864100D01E76 /* ManagementViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagementViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +118,8 @@
 			isa = PBXGroup;
 			children = (
 				D2865E191D1D076B00DB58F2 /* AppDelegate.swift */,
+				DDB3D6A71D1F85DD00D01E76 /* managetmentCenter */,
+				DDB3D6A61D1F85C800D01E76 /* personalLog */,
 				DDA726861D1E6CA100913FDE /* tabbar */,
 				D2865E4A1D1D07F500DB58F2 /* dataCenter */,
 				D2865E681D1D2FC400DB58F2 /* lock */,
@@ -159,7 +163,6 @@
 		D2865E681D1D2FC400DB58F2 /* lock */ = {
 			isa = PBXGroup;
 			children = (
-				D2865E1B1D1D076B00DB58F2 /* ViewController.swift */,
 				D2865E6B1D1D306200DB58F2 /* LoginViewController.swift */,
 			);
 			name = lock;
@@ -173,6 +176,22 @@
 				DDA7268B1D1E6DF200913FDE /* MUTabBarViewController.swift */,
 			);
 			name = tabbar;
+			sourceTree = "<group>";
+		};
+		DDB3D6A61D1F85C800D01E76 /* personalLog */ = {
+			isa = PBXGroup;
+			children = (
+				D2865E1B1D1D076B00DB58F2 /* ViewController.swift */,
+			);
+			name = personalLog;
+			sourceTree = "<group>";
+		};
+		DDB3D6A71D1F85DD00D01E76 /* managetmentCenter */ = {
+			isa = PBXGroup;
+			children = (
+				DDB3D6A81D1F864100D01E76 /* ManagementViewController.swift */,
+			);
+			name = managetmentCenter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -306,6 +325,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDB3D6A91D1F864100D01E76 /* ManagementViewController.swift in Sources */,
 				D2865E6C1D1D306200DB58F2 /* LoginViewController.swift in Sources */,
 				DDA726881D1E6D1C00913FDE /* MUTabBarButton.swift in Sources */,
 				D2865E5F1D1D0A8500DB58F2 /* CoreDataStore.swift in Sources */,
