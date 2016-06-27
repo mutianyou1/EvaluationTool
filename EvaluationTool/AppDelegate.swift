@@ -62,13 +62,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return cdh
     }()
     
-    func savePersonalLog(string :String){
+    func savePersonalLog(logData :PersonLogData){
         let newItem :PersonLog = NSEntityDescription.insertNewObjectForEntityForName("PersonalLog", inManagedObjectContext: self.cdh.backgroundContext) as! PersonLog
-        if !string.isEmpty{
-            newItem.logContent = string
-            print("content insert success ")
+        
+            newItem.logContent = logData.logContent
+            newItem.logTitle = logData.logTitle
+            newItem.logTime = logData.logTime
+            newItem.restTime = logData.restTime
             print(newItem.logContent)
-        }
         self.cdh.saveContext(self.cdh.backgroundContext)
     }
     

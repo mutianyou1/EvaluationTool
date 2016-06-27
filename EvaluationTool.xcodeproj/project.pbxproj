@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D20A67BD1D20F5C0001E37BB /* LogTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20A67BC1D20F5C0001E37BB /* LogTableViewCell.swift */; };
+		D20A67BF1D20FA62001E37BB /* LogEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20A67BE1D20FA62001E37BB /* LogEditViewController.swift */; };
+		D20A67C21D2101B6001E37BB /* MUHeightForCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20A67C11D2101B6001E37BB /* MUHeightForCell.swift */; };
 		D2865E1A1D1D076B00DB58F2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2865E191D1D076B00DB58F2 /* AppDelegate.swift */; };
 		D2865E1C1D1D076B00DB58F2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2865E1B1D1D076B00DB58F2 /* ViewController.swift */; };
 		D2865E1F1D1D076B00DB58F2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2865E1D1D1D076B00DB58F2 /* Main.storyboard */; };
@@ -43,6 +46,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D20A67BC1D20F5C0001E37BB /* LogTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogTableViewCell.swift; sourceTree = "<group>"; };
+		D20A67BE1D20FA62001E37BB /* LogEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogEditViewController.swift; sourceTree = "<group>"; };
+		D20A67C11D2101B6001E37BB /* MUHeightForCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MUHeightForCell.swift; sourceTree = "<group>"; };
 		D2865E161D1D076B00DB58F2 /* EvaluationTool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EvaluationTool.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2865E191D1D076B00DB58F2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D2865E1B1D1D076B00DB58F2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -93,6 +99,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D20A67C01D20FFC8001E37BB /* heightForCell */ = {
+			isa = PBXGroup;
+			children = (
+				D20A67C11D2101B6001E37BB /* MUHeightForCell.swift */,
+			);
+			name = heightForCell;
+			sourceTree = "<group>";
+		};
 		D2865E0D1D1D076B00DB58F2 = {
 			isa = PBXGroup;
 			children = (
@@ -118,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				D2865E191D1D076B00DB58F2 /* AppDelegate.swift */,
+				D20A67C01D20FFC8001E37BB /* heightForCell */,
 				DDB3D6A71D1F85DD00D01E76 /* managetmentCenter */,
 				DDB3D6A61D1F85C800D01E76 /* personalLog */,
 				DDA726861D1E6CA100913FDE /* tabbar */,
@@ -182,6 +197,8 @@
 			isa = PBXGroup;
 			children = (
 				D2865E1B1D1D076B00DB58F2 /* ViewController.swift */,
+				D20A67BC1D20F5C0001E37BB /* LogTableViewCell.swift */,
+				D20A67BE1D20FA62001E37BB /* LogEditViewController.swift */,
 			);
 			name = personalLog;
 			sourceTree = "<group>";
@@ -329,10 +346,13 @@
 				D2865E6C1D1D306200DB58F2 /* LoginViewController.swift in Sources */,
 				DDA726881D1E6D1C00913FDE /* MUTabBarButton.swift in Sources */,
 				D2865E5F1D1D0A8500DB58F2 /* CoreDataStore.swift in Sources */,
+				D20A67BF1D20FA62001E37BB /* LogEditViewController.swift in Sources */,
 				D2865E611D1D1B1B00DB58F2 /* PersonLog.swift in Sources */,
 				D2865E221D1D076B00DB58F2 /* EvaluationTool.xcdatamodeld in Sources */,
+				D20A67BD1D20F5C0001E37BB /* LogTableViewCell.swift in Sources */,
 				D2865E1C1D1D076B00DB58F2 /* ViewController.swift in Sources */,
 				DDA7268C1D1E6DF200913FDE /* MUTabBarViewController.swift in Sources */,
+				D20A67C21D2101B6001E37BB /* MUHeightForCell.swift in Sources */,
 				DDA7268A1D1E6D3400913FDE /* MUTabBarView.swift in Sources */,
 				D2865E5D1D1D0A7900DB58F2 /* CoreDataHelp.swift in Sources */,
 				D2865E1A1D1D076B00DB58F2 /* AppDelegate.swift in Sources */,

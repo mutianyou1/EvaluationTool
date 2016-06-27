@@ -14,6 +14,9 @@ public class PersonLogData:NSObject {
     var logTitle : String = ""
     var logTime : String = ""
     var restTime :String = ""
+    override init() {
+        super.init()
+    }
 }
 
 @objc(PersonLog)

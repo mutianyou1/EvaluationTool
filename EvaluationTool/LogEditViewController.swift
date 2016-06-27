@@ -1,30 +1,21 @@
 //
-//  ManagementViewController.swift
+//  LogEditViewController.swift
 //  EvaluationTool
 //
-//  Created by mutianyou1 on 16/6/26.
+//  Created by 潘元荣(外包) on 16/6/27.
 //  Copyright © 2016年 潘元荣(外包). All rights reserved.
 //
 
 import UIKit
 
-class ManagementViewController: UIViewController {
+class LogEditViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.whiteColor()
-        self.navigationController?.navigationBar.barTintColor = UIColor.orangeColor()
-    }
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
-        super.init(nibName: nil, bundle: nil)
-        self.tabBarItem.title = "功能中心"
-        self.tabBarItem.image = UIImage(named: "teskMan2")
-        self.tabBarItem.selectedImage = UIImage(named: "teskMan")
+        // Do any additional setup after loading the view.
     }
 
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
