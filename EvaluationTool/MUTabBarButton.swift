@@ -23,12 +23,14 @@ class MUTabBarButton: UIControl {
         if item.badgeValue?.isEmpty == false {
           badgeLabel.text = item.badgeValue
           badgeLabel.frame = CGRectMake(self.bounds.size.width * 0.5 , 0, 15, 15)
+          badgeLabel.layer.cornerRadius = 7.5
+          badgeLabel.clipsToBounds = true
+          badgeLabel.textAlignment = .Center
           badgeLabel.backgroundColor = UIColor.redColor()
           badgeLabel.textColor = UIColor.whiteColor()
-          badgeLabel.layer.cornerRadius = 7.5
         }
         titleLabel.text = item.title
-        titleLabel.font = UIFont.systemFontOfSize(12)
+        titleLabel.font = UIFont.systemFontOfSize(8)
         titleLabel.textColor = UIColor.lightGrayColor()
         titleLabel.frame = CGRectMake(0, 30, self.bounds.size.width, 19)
         titleLabel.textAlignment = .Center
@@ -43,7 +45,7 @@ class MUTabBarButton: UIControl {
             isSelect = false
         }
         self.addSubview(imageView)
-        //self.addSubview(titleLabel)
+        self.addSubview(titleLabel)
         self.addSubview(badgeLabel)
     }
    required init?(coder aDecoder: NSCoder) {

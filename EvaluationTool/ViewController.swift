@@ -30,6 +30,7 @@ class ViewController: UIViewController {
                 self.tabBarItem.selectedImage = UIImage(named: "person2")
                 self.tabBarItem.image = UIImage(named: "person1")
                 self.tabBarItem.title = "个人日志"
+                self.tabBarController?.tabBarItem.badgeValue = "4"
         
     }
     required init?(coder aDecoder: NSCoder) {
@@ -88,6 +89,9 @@ class ViewController: UIViewController {
     @objc
     private func clickAddLog() {
       print("addLog")
+       let string = "23"
+        let intd = Int.init(string)
+        print( intd)
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
