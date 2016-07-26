@@ -36,13 +36,16 @@ class MUTabBarButton: UIControl {
         titleLabel.textAlignment = .Center
     }
     func setIsSelected(selected : Bool) {
+    
         imageView.frame = CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height)
         if selected == true {
             imageView.image = tabBarItem.selectedImage
             isSelect = true
+            imageView.backgroundColor = UIColor.redColor();
         }else{
             imageView.image = tabBarItem.image
             isSelect = false
+            imageView.backgroundColor = UIColor.lightGrayColor();
         }
         self.addSubview(imageView)
         self.addSubview(titleLabel)

@@ -14,12 +14,18 @@ class ManagementViewController: UIViewController {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.whiteColor()
         self.navigationController?.navigationBar.barTintColor = UIColor.orangeColor()
+        let lineView = MULineChart(frame: self.view.bounds)
+        lineView.stroke()
+        self.view.addSubview(lineView)
     }
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nil, bundle: nil)
         self.tabBarItem.title = "功能中心"
         self.tabBarItem.image = UIImage(named: "teskMan2")
         self.tabBarItem.selectedImage = UIImage(named: "teskMan")
+        
+        
+        
     }
 
     required init?(coder aDecoder: NSCoder) {
