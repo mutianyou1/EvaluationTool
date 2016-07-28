@@ -14,16 +14,15 @@ class MULineChartDataItem: NSObject {
     var lineColor = UIColor.greenColor()
     var axesColor = UIColor.lightGrayColor()
     
-    var maxX :CGFloat = 1.9
-    var maxY :CGFloat = 34
+    //var maxX :CGFloat = 1.9
+    var maxY :CGFloat = 10
     var xInterval :CGFloat = 10
     var yInterval :CGFloat = 10
     
-    
+    var title : String = "abc"
     var xTitles = [String]()
-    var yTitles = [NSObject]()
-    
-    var pointArray = [CGPoint]()
+    var yTitles = [String]()
+    var yValues = [NSObject]()
     
     
     
@@ -43,10 +42,10 @@ class MULineChart: MUChart {
     }
     
     override func stroke() {
-        lineDataItem.xTitles = ["周一","周二","周三","周四","周五","周六","周日"]
-        lineDataItem.yTitles = [10,23,40,35,15,23,48]
-        lineDataItem.maxY = 50
-        lineDataItem.yInterval = 5
+       // lineDataItem.xTitles = ["周一","周二","周三","周四","周五","周六","周日"]
+       // lineDataItem.yTitles = [10,29,40,35,42,23,48]
+       // lineDataItem.maxY = 50
+        //lineDataItem.yInterval = 5
         let xCount = CGFloat.init(integerLiteral: lineDataItem.xTitles.count)
         let minx = (kwidth - 100)/xCount
         //绘图
@@ -65,9 +64,9 @@ class MULineChart: MUChart {
         let path = UIBezierPath.init()
         for(var i = 1 ;i <= lineDataItem.xTitles.count;i++){
             
-            let yValue  = CGFloat.init(lineDataItem.yTitles[i-1] as! Int)
-            let yPoint =  ((yValue / 50)) * (kheight - kChartBottomHeight - kChartBottomHeight)
-            let point = CGPointMake(minx * CGFloat.init(i) + 50,kheight - yPoint - kChartBottomHeight )
+            let yValue  = CGFloat.init(lineDataItem.yValues[i-1] as! Float)
+            let yPoint =  ((lineDataItem.maxY - yValue)/(lineDataItem.yInterval)) * (kheight - kChartBottomHeight - kChartBottomHeight)
+            let point = CGPointMake(minx * CGFloat.init(i) + 50,yPoint + kChartBottomHeight )
             if (i == 1 ){
                path.moveToPoint(point)
             }else{
@@ -104,6 +103,8 @@ class MULineChart: MUChart {
        let data = MUChartAxesData()
         data.yTitles = lineDataItem.yTitles
         data.xTitles = lineDataItem.xTitles
+        data.title =  lineDataItem.title
+        data.targetView = self
         let axes = MUChartAxes.init(data: data)
         axes.stroke(UIGraphicsGetCurrentContext()!)
     }

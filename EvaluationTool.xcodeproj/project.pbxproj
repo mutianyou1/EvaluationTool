@@ -13,6 +13,8 @@
 		D25B925B1D47339400AA04DB /* MUChartAxes.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25B925A1D47339400AA04DB /* MUChartAxes.swift */; };
 		D25B925D1D4733E500AA04DB /* MUChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25B925C1D4733E500AA04DB /* MUChart.swift */; };
 		D25B925F1D4734FA00AA04DB /* MULineChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = D25B925E1D4734FA00AA04DB /* MULineChart.swift */; };
+		D27222021D4898EA006E3CC7 /* MUPieChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27222011D4898EA006E3CC7 /* MUPieChart.swift */; };
+		D27222041D4898F8006E3CC7 /* MUBarChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = D27222031D4898F8006E3CC7 /* MUBarChart.swift */; };
 		D2865E1A1D1D076B00DB58F2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2865E191D1D076B00DB58F2 /* AppDelegate.swift */; };
 		D2865E1C1D1D076B00DB58F2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2865E1B1D1D076B00DB58F2 /* ViewController.swift */; };
 		D2865E1F1D1D076B00DB58F2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2865E1D1D1D076B00DB58F2 /* Main.storyboard */; };
@@ -55,6 +57,8 @@
 		D25B925A1D47339400AA04DB /* MUChartAxes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MUChartAxes.swift; sourceTree = "<group>"; };
 		D25B925C1D4733E500AA04DB /* MUChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MUChart.swift; sourceTree = "<group>"; };
 		D25B925E1D4734FA00AA04DB /* MULineChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MULineChart.swift; sourceTree = "<group>"; };
+		D27222011D4898EA006E3CC7 /* MUPieChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MUPieChart.swift; sourceTree = "<group>"; };
+		D27222031D4898F8006E3CC7 /* MUBarChart.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MUBarChart.swift; sourceTree = "<group>"; };
 		D2865E161D1D076B00DB58F2 /* EvaluationTool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EvaluationTool.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2865E191D1D076B00DB58F2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D2865E1B1D1D076B00DB58F2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -119,6 +123,8 @@
 				D25B925A1D47339400AA04DB /* MUChartAxes.swift */,
 				D25B925C1D4733E500AA04DB /* MUChart.swift */,
 				D25B925E1D4734FA00AA04DB /* MULineChart.swift */,
+				D27222011D4898EA006E3CC7 /* MUPieChart.swift */,
+				D27222031D4898F8006E3CC7 /* MUBarChart.swift */,
 			);
 			name = Chart;
 			sourceTree = "<group>";
@@ -360,6 +366,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DDB3D6A91D1F864100D01E76 /* ManagementViewController.swift in Sources */,
+				D27222041D4898F8006E3CC7 /* MUBarChart.swift in Sources */,
 				D25B925B1D47339400AA04DB /* MUChartAxes.swift in Sources */,
 				D2865E6C1D1D306200DB58F2 /* LoginViewController.swift in Sources */,
 				DDA726881D1E6D1C00913FDE /* MUTabBarButton.swift in Sources */,
@@ -372,6 +379,7 @@
 				DDA7268C1D1E6DF200913FDE /* MUTabBarViewController.swift in Sources */,
 				D25B925F1D4734FA00AA04DB /* MULineChart.swift in Sources */,
 				D20A67C21D2101B6001E37BB /* MUHeightForCell.swift in Sources */,
+				D27222021D4898EA006E3CC7 /* MUPieChart.swift in Sources */,
 				DDA7268A1D1E6D3400913FDE /* MUTabBarView.swift in Sources */,
 				D25B925D1D4733E500AA04DB /* MUChart.swift in Sources */,
 				D2865E5D1D1D0A7900DB58F2 /* CoreDataHelp.swift in Sources */,
