@@ -42,10 +42,7 @@ class MULineChart: MUChart {
     }
     
     override func stroke() {
-       // lineDataItem.xTitles = ["周一","周二","周三","周四","周五","周六","周日"]
-       // lineDataItem.yTitles = [10,29,40,35,42,23,48]
-       // lineDataItem.maxY = 50
-        //lineDataItem.yInterval = 5
+       
         let xCount = CGFloat.init(integerLiteral: lineDataItem.xTitles.count)
         let minx = (kwidth - 100)/xCount
         //绘图

@@ -15,42 +15,77 @@ class MUPieChartDataItem: NSObject {
     var strokeColor = UIColor.redColor()
     var fillColor = UIColor.blackColor()
     var title = "abc"
+    var lineWidth :CGFloat = 100.0
 }
 class MUPieChart: MUChart {
 
     let pieChartDataItem = MUPieChartDataItem()
-    
+    private lazy var pieCenterArray = [CGPoint]()
+    private let startAngle = 0.0
     override func stroke() {
         //绘图
         let chartLayer = CAShapeLayer.init()
+        chartLayer.backgroundColor = UIColor.clearColor().CGColor
         self.layer.addSublayer(chartLayer)
-        
         UIGraphicsBeginImageContext(self.frame.size)
         
-        var startPoint = CGPointMake(self.bounds.size.width * 0.5 , kChartBottomHeight)
-        var angle :CGFloat = 0.0
-       // let path = UIBezierPath.init(roundedRect: CGRectMake(50, kChartBottomHeight, kwidth - 100, kwidth - 100), cornerRadius: 360/(CGFloat.init(M_PI)))
-        
+    
+        var angle :CGFloat = CGFloat.init(M_PI) * (-0.5)
+        var _angle :CGFloat = 0.0
+        var angleTo :CGFloat = 0.0
+        var colorDegree : CGFloat = 0.0
         for(var i = 0; i < pieChartDataItem.titles.count; i++){
-           
-           
-            let path = UIBezierPath.init()
-            let _angle = (pieChartDataItem.piePercentArray[i] * 360.0)
-            angle += _angle
-            let toPoint = CGPointMake(sin(angle) * (kwidth * 0.5 - 50.0),kChartBottomHeight + (kwidth * 0.5 - 50.0) - cos(angle) * (kwidth * 0.5 - 50.0))
+            //if( i == 5){
+            colorDegree += pieChartDataItem.piePercentArray[i]
+            if(i == 0){
+              _angle += (pieChartDataItem.piePercentArray[i] * CGFloat.init(M_PI * 2))
+            }else{
+              _angle += (pieChartDataItem.piePercentArray[i] * CGFloat.init(M_PI * 2))
+            }
+            if(i == pieChartDataItem.titles.count - 1 ){
+                _angle = CGFloat.init(M_PI) * 1.5
+               // closeWise = false
+            }
+            //let toPoint = CGPointMake(kwidth * 0.5 + sin(_angle) * (kwidth * 0.5 - 50.0), kheight * 0.5 - cos(_angle) * (kwidth * 0.5 - 50.0))
             
-            path.addArcWithCenter(CGPointMake(self.bounds.size.width * 0.5 , kheight * 0.5), radius: kwidth * 0.5 - 50.0, startAngle: angle, endAngle: angle - _angle, clockwise: true)
-            print(_angle,angle)
-            //path.moveToPoint(startPoint)
-            //path.addLineToPoint(toPoint)
+           // path.addArcWithCenter(CGPointMake(self.bounds.size.width * 0.5 , kheight * 0.5), radius: kwidth * 0.5 - 50.0, startAngle: angle, endAngle: _angle, clockwise: true)
+          let color = UIColor(red: colorDegree * 0.9, green: 0.6, blue:0.2, alpha: 1)
+               angleTo = _angle
+            if(i != self.pieChartDataItem.titles.count - 1){
+               angleTo -= CGFloat.init(M_PI_2)
+            }
+           // if(_angle > CGFloat.init(M_PI)){
+            print(i,"xiaoyu")
+            self.pieCenterArray.append(CGPointMake(kwidth * 0.5 +  0.5*(kwidth*0.5 - 50)*sin(_angle*0.5) , kheight * 0.5 - 0.5*(kwidth*0.5 - 50)*cos(_angle*0.5)))
+           // }
+//            else{
+//            
+//             self.pieCenterArray.append(CGPointMake(kwidth * 0.5 -  0.5*(kwidth*0.5 - 50)*sin(_angle*0.5) , kheight * 0.5 - 0.5*(kwidth*0.5 - 50)*cos(_angle*0.5)))
+//            }
+          let layer = self.getSubLayer(CGPointMake(kwidth*0.5, kheight*0.5), raduis: kwidth*0.5 - 100, startAngle: angle, endAngle: angleTo , lineWidth: pieChartDataItem.lineWidth, color:color, isCloseWise: true)
+            if(i == 0){
+               angle = 0
+            }
             
-            startPoint = toPoint
-            path.fill()
-            path.stroke()
-            chartLayer.path = path.CGPath
-         
-
+            angle = angleTo
+            chartLayer.addSublayer(layer)
         }
+        
+        
+        
+        for(var i = 0 ; i < self.pieCenterArray.count ; i++){
+             let centerPoint = self.pieCenterArray[i]
+             let label = UILabel.init()
+            label.text = self.pieChartDataItem.titles[i]
+            label.center = centerPoint
+            //label.backgroundColor = UIColor.redColor()
+            label.sizeToFit()
+           // print(centerPoint)
+            self.addSubview(label)
+        }
+        
+        
+        
         
         //动画
         CATransaction.begin()
@@ -65,6 +100,26 @@ class MUPieChart: MUChart {
         UIGraphicsEndImageContext()
       
         
+    }
+    func getSubLayer(center:CGPoint,raduis:CGFloat,startAngle:CGFloat,endAngle:CGFloat, lineWidth:CGFloat, color:UIColor ,isCloseWise:Bool)->CAShapeLayer{
+        let layer = CAShapeLayer.init()
+        layer.lineCap = kCALineCapButt
+        layer.lineWidth = pieChartDataItem.lineWidth
+        layer.fillColor = UIColor.clearColor().CGColor
+        layer.strokeColor = color.CGColor
+        layer.backgroundColor = UIColor.clearColor().CGColor
+        layer.strokeStart = 0.0
+        layer.strokeEnd = 1.0
+        
+        
+        let path = UIBezierPath.init()
+        path.lineWidth = lineWidth
+        
+        path.addArcWithCenter(center, radius: raduis, startAngle: startAngle, endAngle: endAngle, clockwise: isCloseWise)
+        layer.path = path.CGPath
+        path.stroke()
+       
+        return  layer
     }
     override func drawRect(rect: CGRect) {
         super.drawRect(rect)

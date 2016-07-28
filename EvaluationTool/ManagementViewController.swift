@@ -16,7 +16,7 @@ class ManagementViewController: UIViewController {
         self.navigationController?.navigationBar.barTintColor = UIColor.orangeColor()
         let lineView = MULineChart(frame: self.view.bounds)
         lineView.lineDataItem.xTitles = ["周一","周二","周三","周四","周五","周六","周日"]
-        lineView.lineDataItem.yValues = [23.5,23.9,24.0,25.1,23.8,26.2,23.5]
+        lineView.lineDataItem.yValues = [23.5,23.9,24.0,25.0,23.8,26.2,23.5]
         lineView.lineDataItem.yTitles = ["02:00","01:00","24:00","23:00","22:00"]
         lineView.lineDataItem.title = "作息时间"
         lineView.lineDataItem.maxY = 26.0
@@ -48,7 +48,7 @@ class ManagementViewController: UIViewController {
         }else{
             let pieView = MUPieChart()
             pieView.frame = self.view.bounds
-            pieView.pieChartDataItem.piePercentArray = [0.5,0.3,0.2,0.3]
+            pieView.pieChartDataItem.piePercentArray = [0.2,0.2,0.6]
             pieView.pieChartDataItem.title = "作息时间"
             pieView.pieChartDataItem.titles = ["晚睡","早睡","一般"]
             pieView.pieChartDataItem.fillColor = UIColor.greenColor()
