@@ -48,9 +48,9 @@ class ManagementViewController: UIViewController {
         }else{
             let pieView = MUPieChart()
             pieView.frame = self.view.bounds
-            pieView.pieChartDataItem.piePercentArray = [0.2,0.2,0.6]
+            pieView.pieChartDataItem.piePercentArray = [0.2,0.1,0.5,0.2]
             pieView.pieChartDataItem.title = "作息时间"
-            pieView.pieChartDataItem.titles = ["晚睡","早睡","一般"]
+            pieView.pieChartDataItem.titles = ["早睡","晚睡","很晚睡","一般"]
             pieView.pieChartDataItem.fillColor = UIColor.greenColor()
             pieView.pieChartDataItem.strokeColor = UIColor.greenColor()
             pieView.stroke()
