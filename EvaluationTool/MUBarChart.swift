@@ -86,7 +86,7 @@ class MUBarChart: MUChart {
         animation.timingFunction = CAMediaTimingFunction.init(name: kCAMediaTimingFunctionEaseInEaseOut)
         layer.addAnimation(animation, forKey: "barAnimation")
         CATransaction.commit()
-       
+        
         return layer
     
     }

@@ -79,8 +79,19 @@ class MUPieChart: MUChart {
         maskLayer.strokeStart = 0.0
         maskLayer.strokeEnd = 1.0
         
+        /* A layer whose alpha channel is used as a mask to select between the
+        * layer's background and the result of compositing the layer's
+        * contents with its filtered background. Defaults to nil. When used as
+        * a mask the layer's `compositingFilter' and `backgroundFilters'
+        * properties are ignored. When setting the mask to a new layer, the
+        * new layer must have a nil superlayer, otherwise the behavior is
+        * undefined. Nested masks (mask layers with their own masks) are
+        * unsupported. */
+        /*
+          mask－－遮罩：一个用alpha通道来遮挡layer的背景和layer的过滤复合背景
+          设置一个layer的mask时layer不能有super layer
         
-        
+        */
         //动画
         //CATransaction.begin()
         let animation = CABasicAnimation.init(keyPath: "strokeEnd")

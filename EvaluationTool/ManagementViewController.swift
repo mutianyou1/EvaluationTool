@@ -16,7 +16,7 @@ class ManagementViewController: UIViewController {
         self.navigationController?.navigationBar.barTintColor = UIColor.orangeColor()
         let lineView = MULineChart(frame: self.view.bounds)
         lineView.lineDataItem.xTitles = ["周一","周二","周三","周四","周五","周六","周日"]
-        lineView.lineDataItem.yValues = [23.5,23.9,24.0,25.0,23.8,26.2,23.5]
+        lineView.lineDataItem.yValues = [23.5,23.9,24.0,25.0,23.8,26.0,23.5]
         lineView.lineDataItem.yTitles = ["02:00","01:00","24:00","23:00","22:00"]
         lineView.lineDataItem.title = "作息时间"
         lineView.lineDataItem.maxY = 26.0
@@ -47,11 +47,11 @@ class ManagementViewController: UIViewController {
           let barView = MUBarChart()
            barView.frame = self.view.bounds
            barView.barChartDataItem.xTitles = ["周一","周二","周三","周四","周五","周六","周日"]
-           barView.barChartDataItem.values = [30,40,28,70,80,90,87]
-           barView.barChartDataItem.yTitles = ["100","90","80","70","60","50","40","30","20","10","0"]
-           barView.barChartDataItem.yInterval = 100
-           barView.barChartDataItem.maxY = 100
-           barView.barChartDataItem.title = "销售额（万元）"
+           barView.barChartDataItem.values = [23.5,23.9,24.0,25.0,23.8,26.0,23.5]
+           barView.barChartDataItem.yTitles = ["02:00","01:00","24:00","23:00","22:00"]
+           barView.barChartDataItem.yInterval = 4
+           barView.barChartDataItem.maxY = 26
+           barView.barChartDataItem.title = "作息时间"
            self.view.addSubview(barView)
            barView.stroke()
         }else{
