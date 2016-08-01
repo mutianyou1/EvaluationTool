@@ -44,11 +44,20 @@ class ManagementViewController: UIViewController {
     }
     func changeWithPieChartView(sender:UIButton){
         if(sender.titleLabel?.text?.containsString("柱") != false){
-           
+          let barView = MUBarChart()
+           barView.frame = self.view.bounds
+           barView.barChartDataItem.xTitles = ["周一","周二","周三","周四","周五","周六","周日"]
+           barView.barChartDataItem.values = [30,40,28,70,80,90,87]
+           barView.barChartDataItem.yTitles = ["100","90","80","70","60","50","40","30","20","10","0"]
+           barView.barChartDataItem.yInterval = 100
+           barView.barChartDataItem.maxY = 100
+           barView.barChartDataItem.title = "销售额（万元）"
+           self.view.addSubview(barView)
+           barView.stroke()
         }else{
             let pieView = MUPieChart()
             pieView.frame = self.view.bounds
-            pieView.pieChartDataItem.piePercentArray = [0.2,0.1,0.5,0.2]
+            pieView.pieChartDataItem.piePercentArray = [0.2,0.1,0.6,0.1]
             pieView.pieChartDataItem.title = "作息时间"
             pieView.pieChartDataItem.titles = ["早睡","晚睡","很晚睡","一般"]
             pieView.pieChartDataItem.fillColor = UIColor.greenColor()

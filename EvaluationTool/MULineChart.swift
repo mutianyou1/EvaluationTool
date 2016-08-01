@@ -8,7 +8,7 @@
 
 import UIKit
 
-let kChartBottomHeight :CGFloat = 200
+
 class MULineChartDataItem: NSObject {
     
     var lineColor = UIColor(red: 46/255, green: 153/255, blue: 51/255, alpha: 1.0)
@@ -23,13 +23,6 @@ class MULineChartDataItem: NSObject {
     var xTitles = [String]()
     var yTitles = [String]()
     var yValues = [NSObject]()
-    
-    
-    
-    
-    
-    
-    
 }
 class MULineChart: MUChart {
     var lineDataItem = MULineChartDataItem.init()
@@ -76,7 +69,7 @@ class MULineChart: MUChart {
         //动画
         CATransaction.begin()
         let pathAnimation = CABasicAnimation.init(keyPath: "strokeEnd")
-        pathAnimation.duration = 2.0
+        pathAnimation.duration = 3.0
         pathAnimation.timingFunction = CAMediaTimingFunction.init(name: kCAMediaTimingFunctionEaseInEaseOut)
         pathAnimation.fromValue = 0.0
         pathAnimation.toValue = 1.0

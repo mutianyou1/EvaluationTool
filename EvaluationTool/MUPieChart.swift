@@ -9,7 +9,7 @@
 import UIKit
 
 class MUPieChartDataItem: NSObject {
-    var numberOfParts : Int = 3
+    
     var piePercentArray = [CGFloat]()
     var titles = [String]()
     var strokeColor = UIColor.redColor()

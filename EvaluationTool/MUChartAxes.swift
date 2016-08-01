@@ -21,6 +21,7 @@ class MUChartAxesData: NSObject {
     var yMax :CGFloat = 20.0
     var title : String = "abc"
     var targetView = UIView.init()
+    var xTitleAlignment = NSTextAlignment.Center
 }
 
 class MUChartAxes: NSObject {
@@ -59,7 +60,6 @@ class MUChartAxes: NSObject {
             arrowPath.addLineToPoint(CGPointMake(kwidth - 50.0 + kArrowMargin, kheight - kChartBottomHeight - kArrowHeight ))
             arrowPath.addLineToPoint(CGPointMake(kwidth - 40.0 ,kheight - kChartBottomHeight))
             arrowPath.stroke()
-        }
         
         if(self.axesData.isShowXDegrees){
            let degreesPath = UIBezierPath.init()
@@ -76,23 +76,23 @@ class MUChartAxes: NSObject {
             degreesPath.stroke()
             
             
+            
+        }
             //x轴内容
+            let centerX = (kwidth - 100.0)/(CGFloat.init(self.axesData.xTitles.count*2))
             for(var i = 0;i < self.axesData.xTitles.count ;i++){
-                 let string = self.axesData.xTitles[i]
-                 let label = UILabel()
-                let centerX = (kwidth - 100.0)/(CGFloat.init(self.axesData.xTitles.count*2))
+                let string = self.axesData.xTitles[i]
+                let label = UILabel()
                 label.frame.origin.x = 50.0 + centerX * CGFloat.init(i  + i )
                 label.frame.origin.y = kheight - kChartBottomHeight
                 label.frame.size = CGSizeMake(centerX + centerX, centerX + centerX)
                 label.text = string
-                label.textAlignment = .Center
+                label.textAlignment = self.axesData.xTitleAlignment
                 //label.backgroundColor = UIColor.redColor()
                 label.font = UIFont.systemFontOfSize(10)
                 self.axesData.targetView.addSubview(label)
                 
             }
-        }
-        
         if(self.axesData.isShowYDegrees){
             let degreesPath = UIBezierPath.init()
             degreesPath.lineCapStyle = .Round
@@ -120,35 +120,36 @@ class MUChartAxes: NSObject {
             arrowPath.stroke()
             
             //y轴内容
+           let centerY = (kheight - kChartBottomHeight - kChartBottomHeight)/(CGFloat.init(self.axesData.yTitles.count - 1))
             for(var i = 0;i < self.axesData.yTitles.count ;i++){
                 let str = self.axesData.yTitles[i]
                 let label = UILabel()
-                let centerX = (kheight - kChartBottomHeight - kChartBottomHeight)/(CGFloat.init(self.axesData.yTitles.count - 1))
-                label.frame.origin.x = 70.0 - centerX
-                label.frame.origin.y = kChartBottomHeight + centerX * CGFloat.init(i) - centerX * 0.5
-                label.frame.size = CGSizeMake(centerX, centerX)
+                label.frame.origin.x = 0.0
+                label.frame.origin.y = kChartBottomHeight + centerY * CGFloat.init(i) - centerY * 0.5
+                label.frame.size = CGSizeMake(45, centerY)
                 label.text =  String.init(str)
                 label.font = UIFont.systemFontOfSize(10)
+                label.textAlignment = .Right
                 self.axesData.targetView.addSubview(label)
                 if(i == 0){
                    let titleLabel = UILabel()
-                   titleLabel.frame.origin.x = 70.0 -  centerX
-                   titleLabel.frame.origin.y = kChartBottomHeight -  10 - centerX
-                   titleLabel.frame.size = CGSizeMake(centerX + centerX, centerX)
+                   titleLabel.center.x = 25
+                   titleLabel.center.y = kChartBottomHeight - 30
                    titleLabel.text = self.axesData.title
                    titleLabel.font = UIFont.systemFontOfSize(10)
+                   titleLabel.sizeToFit()
                  self.axesData.targetView.addSubview(titleLabel)
                 }
                 
             }
-        }else{
-            let centerX = (kheight - kChartBottomHeight - kChartBottomHeight)/(5 - 1)
+        }
+    }else{
             let titleLabel = UILabel()
-            titleLabel.frame.origin.x = 70.0 -  centerX
-            titleLabel.frame.origin.y = kChartBottomHeight -  10 - centerX
-            titleLabel.frame.size = CGSizeMake(centerX + centerX, centerX)
+            titleLabel.center.x = 25
+            titleLabel.center.y = kChartBottomHeight - 30
             titleLabel.text = self.axesData.title
             titleLabel.font = UIFont.systemFontOfSize(10)
+            titleLabel.sizeToFit()
             self.axesData.targetView.addSubview(titleLabel)
         }
         

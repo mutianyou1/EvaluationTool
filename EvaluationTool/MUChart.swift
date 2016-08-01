@@ -9,7 +9,7 @@
 import UIKit
 
 
-
+let kChartBottomHeight :CGFloat = 200
 class MUChart: UIView {
     
     override init(frame: CGRect) {
